@@ -1,0 +1,869 @@
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+background:#090b1a;
+overflow:hidden;
+font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+padding:20px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+h1{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+color:#ff4f88;
+
+}
+
+h2{
+
+font-size:35px;
+
+margin-bottom:25px;
+
+color:white;
+
+}
+
+h3{
+
+font-size:25px;
+
+margin-bottom:20px;
+
+color:#ffc9da;
+
+}
+
+p{
+
+max-width:600px;
+
+font-size:20px;
+
+line-height:35px;
+
+margin-bottom:40px;
+
+}
+
+button{
+
+padding:18px 40px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f88;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+background:#ff7aa7;
+
+}
+/*=========================
+  TRANSICIÓN
+=========================*/
+
+.hidden{
+    display: none !important;
+}
+
+.fade-out{
+    animation:fadeOut 1.2s forwards;
+    
+}
+
+.fade-in{
+    animation:fadeIn 1.5s forwards;
+}
+/* Desaparición elegante de la galería */
+
+.photos.fade-out{
+
+    animation:fadePhotos 1.2s forwards;
+
+}
+
+
+@keyframes fadePhotos{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+}
+@keyframes fadeOut{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/*=========================
+  UNIVERSO
+=========================*/
+
+#universe{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#1b1d50,#050510 75%);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+#universe h1{
+
+    font-size:3rem;
+
+    color:#ffd7f0;
+
+    margin-bottom:20px;
+
+}
+
+#universe p{
+
+    font-size:1.2rem;
+
+    max-width:700px;
+
+    line-height:1.7;
+
+}
+
+/* ===============================
+   Contenedor de estrellas
+================================ */
+
+#stars{
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+     z-index:1;
+
+    pointer-events: none;
+
+}
+
+/* ===============================
+   Estrellas
+================================ */
+
+.star{
+
+    position: absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px white,
+    0 0 15px white;
+
+    animation: brillo 3s infinite alternate;
+
+}
+
+
+@keyframes brillo{
+
+    from{
+
+        opacity:0.3;
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+    }
+
+}
+
+/* ===============================
+   Corazón del universo
+================================ */
+
+.galaxy-core{
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:70px;
+
+    transform:translate(-50%,-50%);
+
+cursor:pointer;
+z-index:5;
+
+    background:
+    radial-gradient(circle,
+    white,
+    #ffd7e8 25%,
+    #ff4f88 55%,
+    transparent 75%);
+
+    box-shadow:
+    0 0 30px #ff4f88,
+    0 0 70px #ff7aa7;
+
+    animation:pulsoAmor 3s infinite alternate;
+
+}
+
+
+
+@keyframes pulsoAmor{
+
+    from{
+
+        transform:scale(1);
+
+        filter:brightness(1);
+
+    }
+
+
+    to{
+
+        transform:scale(1.2);
+
+        filter:brightness(1.4);
+
+    }
+
+}
+
+/* ===============================
+   Corazón interactivo
+================================ */
+
+.heart-container{
+
+    position:absolute;
+
+    top:75%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    z-index:3;
+
+}
+
+
+.touch-text{
+
+    position:absolute;
+
+    top:125%;
+    left:19%;
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px #ff7aa7;
+
+    animation:
+    textoFlotante 2s infinite alternate;
+
+}
+
+
+
+@keyframes textoFlotante{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:.7;
+
+    }
+
+    to{
+
+        transform:translateY(-8px);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===============================
+   Carta de amor
+================================ */
+
+.love-letter{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    width:320px;
+
+    padding:30px;
+
+    background:#fff7fb;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 30px #ff4f88;
+
+    color:#333;
+
+    z-index:10;
+
+    transition:.6s;
+
+}
+
+
+.love-letter.show{
+
+    transform:translate(-50%,-50%) scale(1);
+
+}
+
+
+.love-letter h2{
+
+    color:#ff4f88;
+
+    margin-bottom:20px;
+
+}
+
+
+.love-letter p{
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+
+}
+
+/* =========================
+   Fotos estilo Polaroid
+========================= */
+
+.photos {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.photos h2 {
+    color: white;
+    font-size: 35px;
+}
+
+.polaroids {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 25px;
+    width: 220px;
+    transform: rotate(-5deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: aparecerFoto 1.5s forwards;
+}
+
+.polaroid:nth-child(2){
+    transform: rotate(5deg);
+    animation-delay: .5s;
+}
+
+.polaroid:nth-child(3){
+    transform: rotate(-3deg);
+    animation-delay: 1s;
+}
+
+
+.polaroid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+
+.polaroid p {
+    color: #333;
+    font-family: cursive;
+    margin-top: 15px;
+}
+
+
+@keyframes aparecerFoto {
+
+    from {
+        opacity: 0;
+        transform: translateY(80px) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/*==============================
+  VISOR DE RECUERDOS
+==============================*/
+
+.photo-viewer{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fadeViewer .4s;
+}
+
+.viewer-box{
+
+    width:85%;
+    max-width:1000px;
+
+    display:flex;
+    gap:40px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+
+}
+
+.viewer-image{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.viewer-image img{
+
+    width:100%;
+    max-width:380px;
+
+    border:15px solid white;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
+
+    transform:rotate(-4deg);
+
+}
+
+.viewer-message{
+
+    flex:1;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.viewer-message h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+.viewer-message p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+#closeViewer{
+
+    margin-top:35px;
+
+    width:180px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+@keyframes fadeViewer{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===============================
+   ESCENA FINAL - VIDEO
+================================ */
+
+.video-section{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20000;
+
+    opacity:0;
+
+    animation:entradaVideo 2s ease forwards;
+
+}
+
+
+/* Video centrado */
+
+.video-section video{
+
+    width:90%;
+
+    height:90%;
+
+    object-fit:contain;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.4),
+    0 0 100px rgba(255,79,136,.5);
+
+}
+
+
+
+/* Animación de entrada */
+
+@keyframes entradaVideo{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.15);
+
+        filter:blur(10px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+/* ===============================
+   CORAZON FINAL
+================================ */
+
+.final-heart{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle,#351020,#050005);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:25000;
+
+}
+
+
+.final-touch{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+.final-touch p{
+
+    font-size:30px;
+
+    margin-bottom:30px;
+
+}
+
+
+#endHeart{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    animation:pulsoFinal 1.5s infinite alternate;
+
+    filter:drop-shadow(0 0 30px #ff4f88);
+
+}
+
+
+@keyframes pulsoFinal{
+
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+/*=================================
+        PÁGINA FINAL
+=================================*/
+
+.final-page{
+    min-height:100vh;
+    background:linear-gradient(180deg,#2b1055,#5f2c82,#8e44ad);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+
+.final-page h1{
+    font-size:55px;
+    color:#ffd6f6;
+    margin-bottom:25px;
+}
+
+.final-page p{
+    max-width:700px;
+    font-size:24px;
+    line-height:1.8;
+    color:white;
+    margin-bottom:35px;
+}
+
+.final-page h2{
+    font-size:34px;
+    margin-bottom:15px;
+    color:#ffe3ff;
+}
+
+#daysTogether{
+    font-size:38px;
+    line-height:1.8;
+    color:#fff;
+    background:rgba(255,255,255,.15);
+    padding:20px 35px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    margin-bottom:35px;
+}
+
+.final-message{
+    max-width:750px;
+    font-size:22px;
+    color:#f7e9ff;
+    font-style:italic;
+}
